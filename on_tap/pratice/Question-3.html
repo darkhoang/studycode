@@ -1,0 +1,58 @@
+<html>
+  <head>
+    <title>Question 3</title>
+    <style>
+      body {
+        font-size: 16px;
+        font-family: 'Times New Roman', Times, serif;
+        background-color: rgb(237 231 231);
+      }
+      .container {
+        display: flex;
+        flex-direction: column;
+        margin: 30px;
+        padding: 30px;
+        gap: 5px;
+        background-color: white;
+        padding-left: 20px;
+        border-radius: 10px;
+      }
+      input {
+        padding: 10px;
+        border-radius: 10px;
+      }
+      button {
+        background-color: rgb(71, 125, 224);
+        color: white;
+        border-radius: 4px;
+        border: none;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="intro">
+        <h1>Enter Your Names</h1>
+      </div>
+      <div class="main">
+        <input class="first-name" placeholder="First Name" />
+        <input class="last-name" placeholder="Last Name" />
+        <button>Show Full Name</button>
+      </div>
+      <div class="fullname"></div>
+    </div>
+    <script>
+      let firstnameInput = document.querySelector('.first-name');
+      let lastnameInput = document.querySelector('.last-name');
+      let button = document.querySelector('button');
+      let result = document.querySelector('.fullname');
+      let OnClick = function () {
+        let firstname = firstnameInput.value;
+        let lastname = lastnameInput.value;
+        result.innerHTML = `Full name: ${firstname} ${lastname}`;
+      };
+      button.addEventListener('click', OnClick);
+    </script>
+  </body>
+</html>

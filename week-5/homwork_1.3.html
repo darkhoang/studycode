@@ -1,0 +1,94 @@
+<html>
+  <head>
+    <title>My homework</title>
+    <style>
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.5;
+      }
+      .containt {
+        width: 450px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+      div {
+        margin-bottom: 5px;
+      }
+      input {
+        border-radius: 20px;
+        width: 100%;
+        height: 25px;
+      }
+      button {
+        margin-top: 20px;
+        border: none;
+        background-color: crimson;
+        color: #fff;
+        font-size: 24px;
+        width: 100%;
+        height: 50px;
+      }
+
+      button:hover {
+        background-color: rgb(163, 10, 41);
+      }
+      .content {
+        background-color: lightseagreen;
+        font-size: 30px;
+        padding: 10px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="containt">
+      <div>First name</div>
+      <div class="input-info">
+        <input
+          class="input-name"
+          type="text"
+          name="firstname"
+          maxlength="100"
+        />
+      </div>
+      <div>Last name</div>
+      <div class="input-info">
+        <input
+          class="input-lastname"
+          type="text"
+          name="lastname"
+          maxlength="100"
+        />
+      </div>
+      <div>Age</div>
+      <div class="input-info">
+        <input class="input-age" type="number" name="age" min="3" max="140" />
+      </div>
+      <div class="content"></div>
+      <div class="button">
+        <button>Create a summary</button>
+      </div>
+    </div>
+    <script>
+      function createSummary(firstname, lastname, age) {
+        return `Hello, my name is ${firstname} ${lastname}. I am ${age} years old!`;
+      }
+      let a = document.querySelector('button');
+      let b = document.querySelector('.input-name');
+      let c = document.querySelector('.input-lastname');
+      let d = document.querySelector('.input-age');
+      let f = document.querySelector('.content');
+
+      a.addEventListener('click', function () {
+        let firstname = b.value;
+        let lastname = c.value;
+        let age = d.value;
+        let summary = createSummary(firstname, lastname, age);
+        f.textContent = summary;
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,67 @@
+<html>
+  <head>
+    <title>Question 4</title>
+    <style>
+      body {
+        font-family: 'Times New Roman', Times, serif;
+        background-color: #f4f4f4;
+      }
+      .container {
+        text-align: center;
+        width: 400px;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: white;
+        margin: 50 auto;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+      input,
+      button {
+        padding: 10px 0;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        font-size: 16px;
+        margin-top: 10px;
+        width: 100%;
+      }
+      input {
+        text-indent: 20px;
+      }
+      button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Convert Text to Uppercase</h2>
+      <div>
+        <input class="text" placeholder="Fill info" />
+      </div>
+      <div>
+        <button class="btn">Convert to uppercase</button>
+      </div>
+      <div class="result"></div>
+    </div>
+    <script>
+      let inputText = document.querySelector('.text');
+      let button = document.querySelector('.btn');
+      let output = document.querySelector('.result');
+      let ToUpper = function (str) {
+        return str.toUpperCase();
+      };
+      let Onclick = function () {
+        let input = inputText.value;
+        let uppercase = ToUpper(input);
+        output.innerHTML = uppercase;
+      };
+      button.addEventListener('click', Onclick);
+    </script>
+  </body>
+</html>

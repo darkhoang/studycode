@@ -1,0 +1,17 @@
+body {
+  background-color: black;
+  font-family: Helvetica, Arial;
+}
+form {
+  background-color: white;
+  width: 450px;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+  border: 2px lightgray solid;
+  border-radius: 10px;
+}

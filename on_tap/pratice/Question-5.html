@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Question 5</title>
+    <style>
+      .contain {
+        display: flex;
+        max-height: 50px;
+        justify-content: center;
+        margin: 50px;
+        gap: 20px;
+      }
+      button {
+        background-color: white;
+        text-align: center;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: none;
+      }
+      .changecolor {
+        color: blue;
+        border-color: blue;
+      }
+      .changecolor:hover {
+        color: white;
+        background-color: blue;
+      }
+      .changesize {
+        color: rgb(185, 127, 39);
+        border-color: rgb(185, 127, 39);
+      }
+      .changesize:hover {
+        color: white;
+        background-color: rgb(185, 127, 39);
+      }
+      .hide {
+        color: brown;
+        border-color: brown;
+      }
+      .hide:hover {
+        color: white;
+        background-color: brown;
+      }
+      .box {
+        margin: 20px auto;
+        width: 200px;
+        height: 200px;
+        background-color: #ccc;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="contain">
+      <button class="changecolor">Change the box background to "red"</button>
+      <button class="changesize">Make the box becomes bigger</button>
+      <button class="hide">Hide the box</button>
+    </div>
+    <div class="box"></div>
+  </body>
+  <script>
+    let color = document.querySelector('.changecolor');
+    let thebox = document.querySelector('.box');
+    let Onclickchangecolor = function () {};
+    result.addEventListener('click', Onclickchangecolor);
+  </script>
+</html>
