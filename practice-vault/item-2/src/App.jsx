@@ -2,14 +2,14 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [inputValue, setisinputValue] = useState('');
-  const buttonClick = () => {
-    setisinputValue('A button is clicked');
+  const [value, setvalue] = useState('');
+  const onclickButton = () => {
+    setvalue('A button is clicked');
   };
   return (
     <div className="container">
-      <input placeholder="Lets click on Button" value={inputValue} />
-      <button onClick={buttonClick}>Click me to change the input value</button>
+      <input type="text" value={value}></input>
+      <button onClick={onclickButton}>Click to change the vaule input</button>
     </div>
   );
 }

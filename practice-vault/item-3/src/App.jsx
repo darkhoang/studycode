@@ -2,46 +2,23 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [firstName, setFirstName] = useState('');
-  const onFirstNameChange = (e) => {
-    const newValue = e.target.value;
-    setFirstName(newValue);
+  const [fullname, setFullName] = useState('');
+  const onSubmit = (e) => {
+    e.preventDefault();
+    const [fistname, lastname] = e.target.elements;
+    setFullName(`${fistname.value} ${lastname.value}`);
   };
-  const [lastName, setlastName] = useState('');
-  const onLastNameChange = (e) => {
-    const newValue = e.target.value;
-    setlastName(newValue);
-  };
-
-  // const [fullName, setfullName] = useState('');
-
-  const onButtonClick = () => {
-    // const newFullName = `${firstName} ${lastName}`;
-    // setfullName(newFullName);
-  };
-
   return (
     <div className="container">
       <h2>Enter Your Names</h2>
-
-      <input
-        type="text"
-        placeholder="First Name"
-        className="firstname"
-        value={firstName}
-        onChange={onFirstNameChange}
-      />
-      <input
-        type="text"
-        placeholder="Last Name"
-        className="lastname"
-        value={lastName}
-        onChange={onLastNameChange}
-      />
-      <button onClick={onButtonClick}>Show Full Name</button>
-      <div className="fullname">
-        Full name is : {firstName} {lastName}
-      </div>
+      <form onSubmit={onSubmit}>
+        <div className="mid">
+          <input type="text" placeholder="First Name" name="firstname"></input>
+          <input type="text" placeholder="Last Name" name="lastname"></input>
+          <button type="submit">Show Full Name</button>
+        </div>
+      </form>
+      <div className="fullname">{fullname}</div>
     </div>
   );
 }

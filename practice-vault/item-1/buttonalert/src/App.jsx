@@ -2,12 +2,12 @@ import react from 'react';
 import './App.css';
 
 function App() {
-  const onClick = () => {
+  const onclickButon = () => {
     alert('Button clicked');
   };
   return (
     <div className="container">
-      <button onClick={onClick}>Click me to open an alert</button>
+      <button onClick={onclickButon}>Click me to open alert</button>
     </div>
   );
 }
