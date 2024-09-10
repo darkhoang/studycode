@@ -2,20 +2,20 @@ import { useState } from 'react';
 import './App.css';
 
 function App() {
-  const [uppercase, setisUppercase] = useState('');
-  const onclickButton = (e) => {
+  const [value, setisnewvalue] = useState('');
+  const onclickSubMit = (e) => {
     e.preventDefault();
-    const { input } = e.target.elements;
-    const newvalue = input.value.toUpperCase();
-    setisUppercase(newvalue);
+    const { name } = e.target.elements;
+    const newvalue = name.value.toUpperCase();
+    setisnewvalue(newvalue);
   };
   return (
     <div className="container">
-      <h2>Convert Text to Uppercase</h2>
-      <form onSubmit={onclickButton}>
-        <input type="text" placeholder="Enter text here" name="input"></input>
+      <h2>Convert Text to Uppercas</h2>
+      <form onSubmit={onclickSubMit}>
+        <input type="text" placeholder="Enter text here" name="name"></input>
         <button>Convert to uppercase</button>
-        <div className="output">{uppercase}</div>
+        <div className="output">{value}</div>
       </form>
     </div>
   );
