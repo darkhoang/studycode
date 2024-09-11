@@ -3,55 +3,54 @@ import classNames from 'classnames';
 import './App.css';
 
 function App() {
-  const [change, setisChange] = useState({
+  const [value, setisvalue] = useState({
     changecolor: false,
     changesize: false,
-    invisible: false,
+    hide: false,
   });
-  const onclickChangcolorRed = () => {
-    setisChange({
-      ...change,
-      changecolor: !change.changecolor,
+  const onclickChangecolor = () => {
+    setisvalue({
+      ...value,
+      changecolor: !value.changecolor,
     });
   };
   const onclickChangesize = () => {
-    setisChange({
-      ...change,
-      changesize: !change.changesize,
+    setisvalue({
+      ...value,
+      changesize: !value.changesize,
     });
   };
   const onclickHide = () => {
-    setisChange({
-      ...change,
-      invisible: !change.invisible,
+    setisvalue({
+      ...value,
+      hide: !value.hide,
     });
   };
-  const boxclass = classNames(
+  const boxname = classNames(
     {
-      red: change.changecolor,
-      larger: change.changesize,
-      hidden: change.invisible,
+      red: value.changecolor,
+      larger: value.changesize,
+      hidden: value.hide,
     },
     'box'
   );
   return (
     <div>
       <div className="container">
-        <button className="button" onClick={onclickChangcolorRed}>
-          Change the box background to "{change.changecolor ? 'red' : 'default'}
-          "
+        <button className="button" onClick={onclickChangecolor}>
+          Change the box background to "{value.changecolor ? 'default' : 'red'}"
         </button>
         <button className="button warning" onClick={onclickChangesize}>
-          Make the box
-          {change.changesize
-            ? ' becomes bigger'
-            : ' goes back to its default size'}
+          Make the box{' '}
+          {value.changesize
+            ? ' goes back to its default size'
+            : ' becomes bigger'}
         </button>
-        <button className="button danger" onClick={onclickHide}>
-          {change.invisible ? 'Hide' : 'Show'} the box
+        <button className="button dangerous" onClick={onclickHide}>
+          {value.hide ? 'Show' : 'Hide'} the box
         </button>
       </div>
-      <div className={boxclass}></div>
+      <div className={boxname}></div>
     </div>
   );
 }
