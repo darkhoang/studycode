@@ -3,34 +3,55 @@ import classNames from 'classnames';
 import './App.css';
 
 function App() {
-  const [state, setstate] = useState({
-    corlorChange: false,
-    sizeChange: false,
+  const [change, setisChange] = useState({
+    changecolor: false,
+    changesize: false,
     invisible: false,
   });
-  const onclickChangcolor = () => {
-    setstate({
-      ...state,
-      corlorChange: !state.corlorChange,
+  const onclickChangcolorRed = () => {
+    setisChange({
+      ...change,
+      changecolor: !change.changecolor,
     });
   };
-  const boxClassName = classNames({
-    red: state.corlorChange,
-    larger: state.sizeChange,
-    hidden: state.invisible,
-  });
-
+  const onclickChangesize = () => {
+    setisChange({
+      ...change,
+      changesize: !change.changesize,
+    });
+  };
+  const onclickHide = () => {
+    setisChange({
+      ...change,
+      invisible: !change.invisible,
+    });
+  };
+  const boxclass = classNames(
+    {
+      red: change.changecolor,
+      larger: change.changesize,
+      hidden: change.invisible,
+    },
+    'box'
+  );
   return (
     <div>
       <div className="container">
-        <button className="button" onClick={onclickChangcolor}>
-          Change the box background to "
-          {state.corlorChange ? 'deafault' : 'red'}"
+        <button className="button" onClick={onclickChangcolorRed}>
+          Change the box background to "{change.changecolor ? 'red' : 'default'}
+          "
         </button>
-        <button className="button warning">Make the box becomes bigger</button>
-        <button className="button danger">Hide the box</button>
+        <button className="button warning" onClick={onclickChangesize}>
+          Make the box
+          {change.changesize
+            ? ' becomes bigger'
+            : ' goes back to its default size'}
+        </button>
+        <button className="button danger" onClick={onclickHide}>
+          {change.invisible ? 'Hide' : 'Show'} the box
+        </button>
       </div>
-      <div className="box">{boxClassName}</div>
+      <div className={boxclass}></div>
     </div>
   );
 }
