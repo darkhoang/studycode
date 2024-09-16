@@ -106,7 +106,7 @@ function SignUpForm() {
         </Checkbox>
       </Form.Item>
       <Form.Item>
-        <Button type="primary" htmlType="submit">
+        <Button className="mx-36" type="primary" htmlType="submit">
           Register
         </Button>
       </Form.Item>
@@ -116,15 +116,17 @@ function SignUpForm() {
 export function LoginPage() {
   return (
     <div className="h-lvh bg-slate-200">
-      <div className="m-auto pt-14 w-96 flex flex-col gap-10">
-        <div className="font-medium text-4xl ">Ant Deign</div>
-        <div className="mt-5 text-slate-600">
-          Ant Design is the most influential web design specification in Xihu
-          district
-        </div>
+      <div className="m-auto pt-14 W-2/4 flex flex-col  gap-10">
         <div>
-          <Tabs defaultActiveKey="1" items={items} />
+          <div className="text-4xl text-center mb-5 ">Ant Deign</div>
+          <div className="text-center text-slate-600 ">
+            Ant Design is the most influential web design specification in Xihu
+            district
+          </div>
         </div>
+      </div>
+      <div className="m-auto pt-14 w-96">
+        <Tabs defaultActiveKey="1" items={items} />
       </div>
     </div>
   );
